@@ -22,6 +22,6 @@ var YumSourceTemplate = template.Must(template.New("").Parse(`
 name={{.Name}} (added by Juju)
 baseurl={{.URL}}
 {{if .Key}}gpgcheck=1
-gpgkey=%s{{end}}
+gpgkey=%s{{else}}gpgcheck=0{{end}}
 enabled=1
 `[1:]))
